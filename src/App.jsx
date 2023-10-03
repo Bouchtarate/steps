@@ -7,12 +7,12 @@ const messages = [
 ];
 export default function App() {
   const [step, setStep] = useState(1);
-  const nextStep = () => {
+  const handleNext = () => {
     if (step !== 3) {
       setStep(step + 1);
     }
   };
-  const previousStep = () => {
+  const handlePrevious = () => {
     if (step !== 1) {
       setStep(step - 1);
     }
@@ -30,13 +30,13 @@ export default function App() {
       <div className="buttons">
         <button
           className={`${step !== 1 ? "btn-style" : ""}`}
-          onClick={previousStep}
+          onClick={() => handlePrevious()}
         >
           Previous
         </button>
         <button
           className={`${step !== 3 ? "btn-style" : ""}`}
-          onClick={nextStep}
+          onClick={() => handleNext()}
         >
           Next
         </button>
